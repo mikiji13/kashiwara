@@ -121,13 +121,13 @@
     <div class="blogcontainer clearfix">
       <div class="wrapper ">
       <% @posts.each do |post| %>
-            <%= link_to posts_path, class: 'fullbody' do%>
+        <%= link_to posts_path, class: 'fullbody' do%>
           <div class="blogbody">
             <div class="titlebody_cate">
               <h2 class="title-toppage">
                   <ul class="title_thum">
                     <li><%= image_tag "universal", size: "325x217"%><img class="title-toppage" src="" alt="" width="325" height="217">画像</li>
-                    <li class="lititle">タイトル<%= post.title %></li>
+                    <li class="title">タイトル<%= post.title %></li>
                     <p>コメントコメントコメントコメントコメントコメントコメントコメント</p>
                   </ul> <!-- .title_thum -->
                 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
