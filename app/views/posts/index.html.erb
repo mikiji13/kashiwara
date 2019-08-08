@@ -1,118 +1,5 @@
 <div class="container">
-  <div class="navi">
-    <ul class="dropmenu">
-      <li><h1 class="blogtitle"><%= link_to '柏羽藤ジャーナル', '/posts', class: 'blogtitle2' %></h1></li>
-      <li><%= link_to '開店・閉店', '', class: '' %>
-        <ul class="submenu">
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-        </ul> <!-- .submenu -->
-      </li>
-      <li><a href="">グルメ</a>
-        <ul class="submenu">
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-        </ul> <!-- .submenu -->
-      </li>
-      <li><a href="">まとめ</a>
-        <ul class="submenu">
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-        </ul> <!-- .submenu -->
-      </li>
-      <li><a href="">お店</a>
-        <ul class="submenu">
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-        </ul> <!-- .submenu -->
-      </li>
-      <li><a href="">人</a>
-        <ul class="submenu">
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-        </ul> <!-- .submenu -->
-      </li>
-      <li><a href="">ニュース</a>
-        <ul class="submenu">
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-        </ul> <!-- .submenu -->
-      </li>
-      <li><a href="">ギャラリー</a>
-        <ul class="submenu">
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-        </ul> <!-- .submenu -->
-      </li>
-      <li><a href="">イベント</a>
-        <ul class="submenu">
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-        </ul> <!-- .submenu -->
-      </li>
-      <li><a href="">クイズ</a>
-        <ul class="submenu">
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-        </ul> <!-- .submenu -->
-      </li>
-      <li><a href="">サッカー</a>
-        <ul class="submenu">
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-        </ul> <!-- .submenu -->
-      </li>
-      <li><a href="">求人</a>
-        <ul class="submenu">
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-        </ul> <!-- .submenu -->
-      </li>
-      <li><a href="">広告</a>
-        <ul class="submenu">
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-        </ul> <!-- .submenu -->
-      </li>
-      <li><a href="">その他</a>
-        <ul class="submenu">
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-          <li><%= link_to '', '', class: '' %></li>
-        </ul> <!-- .submenu -->
-      </li>
-    </ul> <!-- .dropmenu -->
-  </div> <!-- .navi -->
-  <div class="search-box">
-    <div class="seach-right">
-      <form class="cse-search-box" action="">
-        <input type="hidden" name="cx" value="partner-pub-5221090124385150:9e4v9emp9jr">
-        <input type="hidden" name="ie" value="utf-8">
-        <input type="text" name="q" size="31" placeholder="検索キーワードを入力してください">
-        <input type="submit" name="sa" value="検索" id="search_btn">
-      </form>
-    </div> <!-- .seach-right -->
-      <!-- <div class="search-left">
-          <div class="l-right">
-            <ul class="pc-header-login-nav">
-              <li><a href="" class="sp-header-btn btn-red">新規会員登録</a></li>
-              <li><a href="" class="sp-header-btn header-login">ログイン</a></li>
-            </ul>
-          </div>
-        </div> -->
-  </div> <!-- .search-box -->
+<%= render 'posts/header' %>
 
   <div class="msgb">
   背景画像入れる
@@ -121,14 +8,14 @@
     <div class="blogcontainer clearfix">
       <div class="wrapper ">
       <% @posts.each do |post| %>
-        <%= link_to posts_path, class: 'fullbody' do%>
+        <%= link_to "/posts/#{post.id}", class: 'fullbody' do%>
           <div class="blogbody">
             <div class="titlebody_cate">
               <h2 class="title-toppage">
                   <ul class="title_thum">
                     <li><%= image_tag "universal", size: "325x217"%><img class="title-toppage" src="" alt="" width="325" height="217">画像</li>
                     <li class="title">タイトル<%= post.title %></li>
-                    <p>コメントコメントコメントコメントコメントコメントコメントコメント</p>
+                    <p><%= post.content %></p>
                   </ul> <!-- .title_thum -->
                 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
               </h2>
@@ -151,13 +38,7 @@
 
 
 
-    <div class="footer">
-      <%= link_to '情報提供', '', class: '', target:"_blank" %>
-      <%= link_to 'お問い合わせ', '', class: '' %>
-      <%= link_to '広告掲載', '', class: '', target:"_top" %>
-      <%= link_to '利用規約', '', class: '', target:"_top" %>
-      <%= link_to 'プライバシーポリシー', '', class: '', target:"_blank" %>
-    </div> <!-- .footer -->
+<%= render 'posts/footer' %>
 
 </div> <!-- .container -->
 

@@ -387,6 +387,7 @@ li {
   position: relative;
 }
 
+
 .navi ul {
   margin: 1px 0;
   padding: 0;
@@ -473,7 +474,9 @@ li {
   line-height: 2.2;
 }
 
-
+.seach-left {
+  float: left;
+}
 
 
 .search-box .seach-right {
