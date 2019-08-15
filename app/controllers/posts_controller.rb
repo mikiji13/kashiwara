@@ -13,5 +13,4 @@ class PostsController < ApplicationController
   def create
     Post.create(name: "", image: "", text: "")
   end
-
 end
