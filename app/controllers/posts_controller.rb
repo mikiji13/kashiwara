@@ -14,4 +14,6 @@ class PostsController < ApplicationController
     Post.create(name: "", image: "", text: "")
   end
 
+
+
 end
